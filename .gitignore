@@ -1,0 +1,37 @@
+# Resultados de compilação
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# Diretório de cache da IDE (Visual Studio / VS Code / Rider)
+.vs/
+.vscode/
+.idea/
+
+# Arquivos de configuração pessoal
+*.user
+*.suo
+*.userosscache
+
+# Pacotes NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+
+# Arquivos de log e teste
+[Ll]og/
+[Ll]ogs/
+[Tt]est[Rr]esult*/
+*.binlog
+
+# Variáveis de ambiente e configurações locais (contêm informações sensíveis, nunca fazer commit)
+.env
+appsettings.Local.json
+appsettings.*.Local.json
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
