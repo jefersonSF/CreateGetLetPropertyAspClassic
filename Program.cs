@@ -8,27 +8,25 @@ List<string> listProperty = new List<string>();
 List<string> listPropertyResult = new List<string>();
 
 
-//Lista de propriedade da entidade, cada propriedade deve esta em uma linha da string abaixo.
-string propertys = @"
-    IdProcesso
-    SiglaProcesso
-    DescProcesso
-    NivelProcesso
-    Missao
-    IdTipoProcesso
-    DatFimPrc 
-";
+Console.WriteLine("################################################################\n" +
+"Gerador de propriedades Get e Let para ASP Classic ou VB6 - V1.0" +
+"\n################################################################\n\n");
+
+
+Console.WriteLine("Entre com a lista de propriedades separadas por virgula e aperte ENTER.");
+string propertys = Console.ReadLine() ?? string.Empty;
+Console.WriteLine("\nResultado");
 
 //Quebra a string de propriedades, numa lista, onde cada linha da string será um item da lista de propriedades.
-listProperty = propertys.Split('\n').Where(x => x.Trim() != "").ToList();
+listProperty = propertys.Split(',').Where(x => x.Trim() != "").ToList();
 
 //Eliminar valores vazios.
-listProperty = listProperty.Where(x=>!string.IsNullOrEmpty(x)).Select(x=>x.Replace("private ", "").Replace("public ", "").Trim()).ToList();
+listProperty = listProperty.Where(x=>!string.IsNullOrEmpty(x)).Select(x=>x.Replace("private ", "").Replace("public ", "").Trim()).Distinct(StringComparer.OrdinalIgnoreCase).ToList();
 
 //Percorre a lista de propriedades para montar as propriedade Get e Let de cada atributo e adicionar numa nova lista de propriedadeds.
 foreach (string proper in listProperty){
-    string strPropGet = $"public property get get{proper}()\n\t get{proper} = {proper}\nend property \n";
-    string strPropLet = $"public property let let{proper}(value)\n\t {proper} = value\nend property";
+    string strPropGet = $"public property get Get{proper}()\n\t Get{proper} = {proper}\nend property \n";
+    string strPropLet = $"public property let Let{proper}(value)\n\t {proper} = value\nend property";
 
     listPropertyResult.Add(strPropGet + strPropLet + "\n\n");
 }
