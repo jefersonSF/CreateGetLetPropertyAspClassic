@@ -30,3 +30,18 @@ Isso reduz o trabalho repetitivo de escrever manualmente o boilerplate de propri
 1. Execute a ferramenta:
    ```bash
    dotnet run
+
+## 💡 Dicas de uso
+
+Para facilitar o uso no dia a dia:
+
+1. **Gere o executável** com 
+`dotnet publish`
+:
+   ```bash
+   dotnet publish -c Release -r win-x64 --self-contained
+
+
+2. **Crie um atalho** para o executável no local de sua preferência (Área de Trabalho, menu Iniciar, etc...).
+
+3. (Opcional) Adicione a pasta do executável ao PATH para chamar a ferramenta de qualquer terminal.
