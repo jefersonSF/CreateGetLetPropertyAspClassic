@@ -44,4 +44,8 @@ Para facilitar o uso no dia a dia:
 
 2. **Crie um atalho** para o executável no local de sua preferência (Área de Trabalho, menu Iniciar, etc...).
 
-3. (Opcional) Adicione a pasta do executável ao PATH para chamar a ferramenta de qualquer terminal.
+3. (Opcional) Adicione a pasta do executável ao `PATH` para chamar a ferramenta de qualquer terminal.
+
+   **Windows**: adicione o caminho em Variáveis de Ambiente → Path.
+
+   **Linux/macOS**: adicione export PATH="$PATH:/caminho/para/a/pasta" ao ~/.bashrc ou ~/.zshrc
