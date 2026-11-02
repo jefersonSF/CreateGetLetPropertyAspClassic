@@ -35,6 +35,7 @@ Isso reduz o trabalho repetitivo de escrever manualmente o boilerplate de propri
 
 Para facilitar o uso no dia a dia:
 
+### Dica 1
 1. **Gere o executável** com 
 `dotnet publish`
 :
@@ -49,3 +50,9 @@ Para facilitar o uso no dia a dia:
    **Windows**: adicione o caminho em Variáveis de Ambiente → Path.
 
    **Linux/macOS**: adicione export PATH="$PATH:/caminho/para/a/pasta" ao ~/.bashrc ou ~/.zshrc
+
+### Dica 2
+No caso da execução via terminal, pode personalizar o nome do executável, de forma que o nome do comando fique mais simples de ser lembrado. Pra isso, basta alterar no arquivo .csproj a propriedaade `<AssemblyName>GetLetGen</AssemblyName>` para outro nome de sua preferência.
+
+### Dica 3
+Caso não tenha instalado [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0), é possível tentar a execução com outras versões, visto que o código C# utilizado nessa ferramenta, é comum nas diversas versões do dotnet. Então se necessário, altere a versão do `<TargetFramework>net8.0</TargetFramework>`
