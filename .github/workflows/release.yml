@@ -23,17 +23,17 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore ./SeuProjeto.csproj
+        run: dotnet restore ./CreateGetLetPropertyAspClassic.csproj
 
       - name: Build application
         run: |
-          dotnet build ./SeuProjeto.csproj \
+          dotnet build ./CreateGetLetPropertyAspClassic.csproj \
           --configuration Release \
           --no-restore
 
       - name: Publish application
         run: |
-          dotnet publish ./SeuProjeto.csproj \
+          dotnet publish ./CreateGetLetPropertyAspClassic.csproj \
           --configuration Release \
           --no-build \
           --output ./publish
@@ -42,13 +42,13 @@ jobs:
         run: |
           mkdir -p artifacts
           cd publish
-          zip -r "../artifacts/SeuProjeto-${GITHUB_REF_NAME}.zip" .
+          zip -r "../artifacts/CreateGetLetPropertyAspClassic-${GITHUB_REF_NAME}.zip" .
 
       - name: Create GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create "$GITHUB_REF_NAME" \
-            "artifacts/SeuProjeto-${GITHUB_REF_NAME}.zip" \
+            "artifacts/CreateGetLetPropertyAspClassic-${GITHUB_REF_NAME}.zip" \
             --title "$GITHUB_REF_NAME" \
             --generate-notes
