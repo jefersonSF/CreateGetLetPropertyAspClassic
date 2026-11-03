@@ -43,3 +43,7 @@ Console.WriteLine(Environment.NewLine);
 listPropertyResult.ForEach(x=>{
     Console.WriteLine(x);
 });
+
+Console.Beep();
+Console.WriteLine($"{Environment.NewLine}Aperte ENTER para fechar.");
+Console.ReadLine();
